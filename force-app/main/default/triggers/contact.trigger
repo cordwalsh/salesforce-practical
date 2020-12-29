@@ -1,4 +1,4 @@
-trigger contactHouse on Contact (before insert, before update, after insert) {
+trigger contact on Contact (before insert, before update, after insert) {
 
     if(Trigger.isInsert){ //if insert
         for(Contact c : Trigger.new){ //for each contact being updated

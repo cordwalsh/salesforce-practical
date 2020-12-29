@@ -28,7 +28,9 @@
     - report showing all Indow inserts grouped by contact with calculated percentage breakdown of product type per contact 
 3. In which states are Acoustic inserts more popular than Standard inserts?
     - report showing all Indow inserts grouped by contact's State (US only) ordered by highest percentage of acoustic product type
-## Apex Trigger
+    
+note: when saving reports, salesforce defaults to the "Private Reports" folder, but the "sfdx force:source:pull" command will only capture your reports from the scratch org if they are placed in a public folder (eg "Public Reports"), so make sure to move them out of your private folder when trying to pull them back to save on your local machine.
+## Apex Triggers
 ### we have a contact trigger called "contact"
 - when a contact is inserted, the trigger creates a corresponding new house object using the contact's address information
 - whenever a contact is updated, the trigger checks to see if the address on the contact has changed. it looks at all of the houses related to the contact to find the primary house record, and updates the address on the house if it has changed on the contact
@@ -46,7 +48,7 @@
     - uncomment section 3 from the contactHouse_test class (lines 34 through 42)
     - the test is failing on line 34, saying that there is dml null pointer exception when trying to update the related contact when the house is deleted. figure out why and correct the house trigger so that the test passes.  
 
-(commit and publish your project so far to your public repo to ensure we can reference your solution up to this point because we are going to make additional changes.)
+(commit and publish your project so far to your public repo to ensure we can reference your solution up to this point, because we are now going to make additional changes to the file.)
 ### Improvement
 1. our three test sections in contactHouse_test are really testing three different things, and it would be nice to know if one of them was failing independently from the other two. restructure the test class to replace our single test method with three discrete test functions, one for each of the three sections: contactInsertTest(), houseInsert(), houseDelete()
 2. find a few other ways to improve either our process, our logic, or our code
