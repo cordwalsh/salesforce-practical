@@ -46,11 +46,11 @@ note: when saving reports, salesforce defaults to the "Private Reports" folder, 
  
 3. *EXCEPTION_THROWN [34]|System.DmlException: Delete failed. First exception on row 0 with id a003B000005AIkfQAG; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, house: execution of AfterDelete EXCEPTION_THROWN caused by: System.NullPointerException: Attempt to de-reference a null object*
     - uncomment section 3 from the contactHouse_test class (lines 34 through 42)
-    - the test is failing on line 34, saying that there is dml null pointer exception when trying to update the related contact when the house is deleted. figure out why and correct the house trigger so that the test passes.  
+    - the test is failing on line 34, saying that there is a dml null pointer exception when trying to update the related contact when the house is deleted. figure out why and correct the house trigger so that the test passes.  
 
 (commit and publish your project so far to your public repo to ensure we can reference your solution up to this point, because we are now going to make additional changes to the file.)
 ### Improvement
-1. our three test sections in contactHouse_test are really testing three different things, and it would be nice to know if one of them was failing independently from the other two. restructure the test class to replace our single test method with three discrete test functions, one for each of the three sections: contactInsertTest(), houseInsert(), houseDelete()
+1. our three test sections in contactHouse_test are really testing three different things, and it would be nice to know if one of them was failing independently from the other two. restructure the test class to replace our single test method with three discrete test functions, one for each of the three sections: contactInsert(), houseInsert(), houseDelete()
 2. find a few other ways to improve either our process, our logic, or our code
 
 
