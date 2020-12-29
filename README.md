@@ -1,11 +1,11 @@
 # Instructions/Environment Setup
-1. fork this repo to your own public github repo and clone it to your local machine
+1. fork this repo to your own private github repo and clone it to your local machine
 2. install the salesforce SFDX CLI development tools (i recommend using VS Code because salesforce maintains the "Salesforce Extension Pack" which makes working with the SFDX tools a lot easier, but you are welcome to use a different IDE/terminal if you prefer)
 3. create a scratch org and push the source from this project into it (you will need salesforce credentials for this, as you will need to set up a dev org to authenticate with)
 4. complete the listed tasks in the scratch org
     - for code tasks, the salesforce "developer console", which is accessible from the gear icon menu in the top right of the screen, can be used as an IDE to edit code and also to run test classes and view debug logs. these tasks can also be done using the VS Code "salesforce extension pack", either way you should reach the same result, it's more a matter of preference. (I tend to switch back and forth depending on what I'm working on, no hard rules here, whatever makes the most sense.)
 5. ensure your changes have been pulled back from the scratch org into your local environment
-6. commit and push your updated project to the public repo you created and share the link with me (Mat)
+6. commit and push your updated project to the private repo you created and add my github user (matindow) as a collaborator so that I can review your work
 - I anticipate this will take 2-4 hours to complete
 - if you get stuck or have questions, reach out to me (Mat) directly
 # Tasks
@@ -48,7 +48,7 @@ note: when saving reports, salesforce defaults to the "Private Reports" folder, 
     - uncomment section 3 from the contactHouse_test class (lines 34 through 42)
     - the test is failing on line 34, saying that there is a dml null pointer exception when trying to update the related contact when the house is deleted. figure out why and correct the house trigger so that the test passes.  
 
-(commit and publish your project so far to your public repo to ensure we can reference your solution up to this point, because we are now going to make additional changes to the file.)
+(commit and publish your project so far to your private repo to ensure we can later reference your solution up to this point, because we are now going to make additional changes to the test file.)
 ### Improvement
 1. our three test sections in contactHouse_test are really testing three different things, and it would be nice to know if one of them was failing independently from the other two. restructure the test class to replace our single test method with three discrete test functions, one for each of the three sections: contactInsert(), houseInsert(), houseDelete()
 2. find a few other ways to improve either our process, our logic, or our code
