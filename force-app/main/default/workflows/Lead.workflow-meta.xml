@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Contact_Formatting</fullName>
+        <field>FirstName</field>
+        <name>Contact Formatting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_FormattingLastName</fullName>
+        <field>LastName</field>
+        <formula>UPPER(LastName)</formula>
+        <name>Contact Formatting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Formatting_FirstName</fullName>
+        <field>FirstName</field>
+        <formula>UPPER(FirstName )</formula>
+        <name>Contact Formatting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Formatting_LastName</fullName>
+        <field>LastName</field>
+        <name>Contact Formatting</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Name Capitalization</fullName>
+        <actions>
+            <name>Contact_FormattingLastName</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Formatting_FirstName</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Lead.FirstName</field>
+            <operation>equals</operation>
+            <value>FirstName</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LastName</field>
+            <operation>equals</operation>
+            <value>LastName</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>
